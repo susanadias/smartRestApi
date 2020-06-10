@@ -1,0 +1,2 @@
+INSERT INTO `role` (name) VALUES('ADMINISTRADOR');
+INSERT INTO `role` (name) VALUES('PADRÃO');
