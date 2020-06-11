@@ -21,8 +21,14 @@ public class Classification implements Serializable{
 	private String type;
 	
 	public Classification() {
-		
 	}
+	
+
+	public Classification(String type) {
+		super();
+		this.type = type;
+	}
+
 
 	public String getType() {
 		return type;

@@ -28,6 +28,9 @@ public class User implements Serializable{
 	@Column(name = "email")
 	private String email;
 	
+	@Column(name = "user_password")
+	private boolean userPassword;
+	
 	@Column(name = "name")
 	private String name;
 	
@@ -47,7 +50,6 @@ public class User implements Serializable{
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_has_store", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "store_id"))
     private Set<Store> stores;
-	
 	
 	
 	public User() {

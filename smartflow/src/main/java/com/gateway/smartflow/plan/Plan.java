@@ -42,11 +42,8 @@ public class Plan implements Serializable{
 	@OneToMany(mappedBy = "plan", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Set<Client> clients;
 	
-	@JsonIgnore
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "plan_has_modules", joinColumns = @JoinColumn(name = "plan_id"), inverseJoinColumns = @JoinColumn(name = "modules_id"))
+	@ManyToMany(mappedBy = "plans")
     private Set<Module> modules;
-	
 	
 	public Plan() {
 		

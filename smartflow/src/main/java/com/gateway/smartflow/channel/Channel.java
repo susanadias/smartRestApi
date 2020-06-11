@@ -41,4 +41,41 @@ public class Channel implements Serializable {
 	
 	
 
+
+	public Channel(String name, Device device) {
+		super();
+		this.name = name;
+		this.device = device;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public Device getDevice() {
+		return device;
+	}
+
+
+	public void setDevice(Device device) {
+		this.device = device;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Channel [id=" + id + ", name=" + name + ", device=" + device + "]";
+	}
+	
+	
+	
+	
+
 }
