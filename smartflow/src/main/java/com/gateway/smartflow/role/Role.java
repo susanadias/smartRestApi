@@ -2,6 +2,7 @@ package com.gateway.smartflow.role;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.gateway.smartflow.user.User;
 
 import java.io.Serializable;
@@ -21,6 +22,7 @@ public class Role implements Serializable {
 	@Column(name = "name", unique = true)
 	private String name;
 
+	@JsonIgnore
 	@OneToMany(mappedBy = "role", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Set<User> users;
 

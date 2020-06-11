@@ -22,9 +22,6 @@ import com.gateway.smartflow.user.User;
 @Table(name = "client")
 public class Client implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -49,6 +46,82 @@ public class Client implements Serializable{
 	
 	public Client() {
 	}
+	
+	
+
+	public String getName() {
+		return name;
+	}
+
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
+	public boolean isDisabled() {
+		return disabled;
+	}
+
+
+
+	public void setDisabled(boolean disabled) {
+		this.disabled = disabled;
+	}
+
+
+
+	public String getShowGatewayLogo() {
+		return showGatewayLogo;
+	}
+
+
+
+	public void setShowGatewayLogo(String showGatewayLogo) {
+		this.showGatewayLogo = showGatewayLogo;
+	}
+
+
+
+	public Set<User> getUsers() {
+		return users;
+	}
+
+
+
+	public void setUsers(Set<User> users) {
+		this.users = users;
+	}
+
+
+
+	public Plan getPlan() {
+		return plan;
+	}
+
+
+
+	public void setPlan(Plan plan) {
+		this.plan = plan;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Client [id=" + id + ", name=" + name + ", disabled=" + disabled + ", showGatewayLogo=" + showGatewayLogo
+				+ ", users=" + users + ", plan=" + plan + "]";
+	}
+	
+	
+	
+	
+
+	
+	
+	
 	
 	
 	

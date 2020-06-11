@@ -29,19 +29,20 @@ public class User implements Serializable{
 	private String email;
 	
 	@Column(name = "user_password")
-	private boolean userPassword;
+	private String userPassword;
 	
 	@Column(name = "name")
 	private String name;
 	
-	@Column(name = "disable")
-	private boolean disable;
+	@Column(name = "disabled")
+	private boolean disabled;
 	
+	@JsonIgnore
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "role_id", nullable = false)
     private Role role;
 	
-	
+	@JsonIgnore
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "client_id", nullable = false)
     private Client client;
@@ -56,11 +57,11 @@ public class User implements Serializable{
 		 stores = new HashSet<>();
 	}
 
-	public User(String email, String name, boolean disable, Role role, Client client) {
+	public User(String email, String name, boolean disabled, Role role, Client client) {
 		super();
 		this.email = email;
 		this.name = name;
-		this.disable = disable;
+		this.disabled = disabled;
 		this.role = role;
 		this.client = client;
 	}
@@ -89,12 +90,12 @@ public class User implements Serializable{
 		this.name = name;
 	}
 
-	public boolean isDisable() {
-		return disable;
+	public boolean isDisabled() {
+		return disabled;
 	}
 
-	public void setDisable(boolean disable) {
-		this.disable = disable;
+	public void setDisabled(boolean disabled) {
+		this.disabled = disabled;
 	}
 
 	public Role getRole() {
@@ -107,7 +108,7 @@ public class User implements Serializable{
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", email=" + email + ", name=" + name + ", disable=" + disable + ", role=" + role
+		return "User [id=" + id + ", email=" + email + ", name=" + name + ", disabled=" + disabled + ", role=" + role
 				+ ", client=" + client + "]";
 	}
 	
