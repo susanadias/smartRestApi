@@ -48,12 +48,19 @@ public class Client implements Serializable{
 	}
 	
 	
+	
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getName() {
 		return name;
 	}
-
-
 
 	public void setName(String name) {
 		this.name = name;
@@ -101,13 +108,9 @@ public class Client implements Serializable{
 		return plan;
 	}
 
-
-
 	public void setPlan(Plan plan) {
 		this.plan = plan;
 	}
-
-
 
 	@Override
 	public String toString() {
@@ -115,15 +118,4 @@ public class Client implements Serializable{
 				+ ", users=" + users + ", plan=" + plan + "]";
 	}
 	
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-
 }

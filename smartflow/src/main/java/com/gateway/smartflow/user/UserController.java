@@ -1,7 +1,14 @@
 package com.gateway.smartflow.user;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
+import javax.validation.constraints.Min;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -11,37 +18,77 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.gateway.smartflow.user.dto.UserMapper;
+import com.gateway.smartflow.SmartflowApp;
+import com.gateway.smartflow.user.dto.UserDto;
+
 
 
 @RequestMapping("/api/v1/users")
 @RestController
 public class UserController {
 	
+	private static final Logger logger = LogManager.getLogger(UserController.class);
+	
 	@Autowired
 	private UserService userService;
 	
 	
 	@GetMapping
-    public ResponseEntity<Page<User>> getAllUsersByClientId(UserFilter userFilter) 
-    {	
-		//TODO 
+    public  ResponseEntity<Map<String, Object>> getUsersByClientId(@RequestParam(defaultValue = "0") @Min(0) int page,
+            @RequestParam(defaultValue = "10") @Min(1) int size,
+            @RequestParam String clientId) {
 		
-		Pageable pageable = PageRequest.of(userFilter.getPageNumber(),userFilter.getPageSize());
+		logger.info("Get user by client Id");
 		
-		Page<User> list = this.userService.findUsersByClientId(Long.valueOf(userFilter.getClientId()), pageable);
-		
-	    return new ResponseEntity<Page<User>>(list, new HttpHeaders(), HttpStatus.OK);
+		try {
+
+			Pageable pageable = PageRequest.of(page, size);
+			Page<UserDto> usersPage = this.userService.findUsersByClientIdTest(clientId, pageable);
+			
+			Map<String, Object> userResponse = new HashMap<>();
+			userResponse.put("users", usersPage.getContent());
+			userResponse.put("currentPage", usersPage.getNumber());
+			userResponse.put("totalItems", usersPage.getTotalElements());
+			userResponse.put("totalPages", usersPage.getTotalPages());
+
+			return new ResponseEntity(userResponse, new HttpHeaders(), HttpStatus.OK);
+
+		} catch (Exception e) {
+			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+        
     }
+	
 
 	@GetMapping("/{userId}")
-    public ResponseEntity<List<User>> getUserById(@PathVariable("userId") int userId) 
-    {	
-		
-		return null;
-		
-	    //return new ResponseEntity<List<User>>(list, new HttpHeaders(), HttpStatus.OK);
+	public ResponseEntity<UserDto> getUserById(@PathVariable("userId") String userId) {
+		logger.info("Get user by Id");
+		UserDto user = this.userService.findUserById(Long.valueOf(userId));
+		return new ResponseEntity<UserDto>(user, new HttpHeaders(), HttpStatus.OK);
+	}
+	
+	
+	@PostMapping
+    public ResponseEntity<UserDto> create(@RequestBody UserDto userDto) {
+		logger.info("Create a new user");
+		this.userService.saveUser(userDto);
+        return ResponseEntity.status(HttpStatus.CREATED).body(userDto);
     }
+	
+	
+	@PutMapping("/{userId}")
+    public ResponseEntity<UserDto> update(@PathVariable("userId") String userId, @RequestBody UserDto userDto) {
+		logger.info("Edit currently user");
+		this.userService.editUser(Long.valueOf(userId), userDto);
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(userDto);
+    }
+
 }

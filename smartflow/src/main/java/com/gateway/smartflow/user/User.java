@@ -25,15 +25,15 @@ public class User implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	
+	@Column(name = "name")
+	private String name;
+	
 	@Column(name = "email")
 	private String email;
 	
 	@Column(name = "user_password")
 	private String userPassword;
-	
-	@Column(name = "name")
-	private String name;
-	
+
 	@Column(name = "disabled")
 	private boolean disabled;
 	
@@ -57,9 +57,10 @@ public class User implements Serializable{
 		 stores = new HashSet<>();
 	}
 
-	public User(String email, String name, boolean disabled, Role role, Client client) {
+	public User(String email,String userPassword, String name, boolean disabled, Role role, Client client) {
 		super();
 		this.email = email;
+		this.userPassword =userPassword;
 		this.name = name;
 		this.disabled = disabled;
 		this.role = role;
@@ -76,6 +77,15 @@ public class User implements Serializable{
 
 	public String getEmail() {
 		return email;
+	}
+	
+
+	public String getUserPassword() {
+		return userPassword;
+	}
+
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
 	}
 
 	public void setEmail(String email) {
@@ -105,12 +115,28 @@ public class User implements Serializable{
 	public void setRole(Role role) {
 		this.role = role;
 	}
+	
+	
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
+
+	public Set<Store> getStores() {
+		return stores;
+	}
+
+	public void setStores(Set<Store> stores) {
+		this.stores = stores;
+	}
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", email=" + email + ", name=" + name + ", disabled=" + disabled + ", role=" + role
-				+ ", client=" + client + "]";
+		return "User [id=" + id + ", name=" + name + ", email=" + email + ", userPassword=" + userPassword
+				+ ", disabled=" + disabled + ", role=" + role + ", client=" + client + ", stores=" + stores + "]";
 	}
-	
 
 }

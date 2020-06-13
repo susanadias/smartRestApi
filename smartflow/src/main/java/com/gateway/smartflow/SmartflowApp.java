@@ -7,7 +7,8 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+
+@SpringBootApplication(scanBasePackages = { "com.gateway.smartflow"})
 public class SmartflowApp implements ApplicationRunner{
 	
 	private static final Logger logger = LogManager.getLogger(SmartflowApp.class);
