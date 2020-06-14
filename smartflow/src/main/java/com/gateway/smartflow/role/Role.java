@@ -21,6 +21,9 @@ public class Role implements Serializable {
 
 	@Column(name = "name", unique = true)
 	private String name;
+	
+	@Column(name = "label", unique = true)
+	private String label;
 
 	@JsonIgnore
 	@OneToMany(mappedBy = "role", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -48,6 +51,16 @@ public class Role implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	
+
+	public String getLabel() {
+		return label;
+	}
+
+	public void setLabel(String label) {
+		this.label = label;
+	}
 
 	public Set<User> getUsers() {
 		return users;
@@ -62,6 +75,7 @@ public class Role implements Serializable {
 		final StringBuilder sb = new StringBuilder("Role{");
 		sb.append("id=").append(id);
 		sb.append(", name='").append(name).append('\'');
+		sb.append(", label='").append(label).append('\'');
 		sb.append(", users=").append(users);
 		sb.append('}');
 		return sb.toString();
