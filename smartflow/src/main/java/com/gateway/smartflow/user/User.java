@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.gateway.smartflow.client.Client;
@@ -27,12 +28,16 @@ public class User implements Serializable{
 	
 	@Column(name = "name")
 	private String name;
-	
-	@Column(name = "email")
+
+	@Column(name = "email",nullable = false, unique = true)
+	@Email(message = "Please provide a valid e-mail")
 	private String email;
 	
 	@Column(name = "user_password")
 	private String userPassword;
+	
+	@Column(name = "reset_token")
+	private String resetToken;
 
 	@Column(name = "disabled")
 	private boolean disabled;

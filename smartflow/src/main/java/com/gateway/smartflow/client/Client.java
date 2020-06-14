@@ -14,6 +14,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 import com.gateway.smartflow.plan.Plan;
 import com.gateway.smartflow.user.User;
@@ -31,12 +34,16 @@ public class Client implements Serializable{
 	@Column(name = "name")
 	private String name;
 	
-	@Column(name = "email")
+	@Column(name = "email",nullable = false, unique = true)
+	@Email(message = "Please provide a valid e-mail")
 	private String email;
 	
 
 	@Column(name = "client_password")
 	private String clientPassword;
+	
+	@Column(name = "reset_token")
+	private String resetToken;
 	
 	@Column(name = "disabled")
 	private boolean disabled;
