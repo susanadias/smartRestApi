@@ -44,6 +44,75 @@ public class Record implements Serializable {
 	public Record() {
 		
 	}
+
+
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public int getCountIn() {
+		return countIn;
+	}
+
+
+	public void setCountIn(int countIn) {
+		this.countIn = countIn;
+	}
+
+
+	public int getCountOut() {
+		return countOut;
+	}
+
+
+	public void setCountOut(int countOut) {
+		this.countOut = countOut;
+	}
+
+
+	public LocalDate getTimestamp() {
+		return timestamp;
+	}
+
+
+	public void setTimestamp(LocalDate timestamp) {
+		this.timestamp = timestamp;
+	}
+
+
+	public Channel getChannel() {
+		return channel;
+	}
+
+
+	public void setChannel(Channel channel) {
+		this.channel = channel;
+	}
+
+
+	public Classification getClassification() {
+		return classification;
+	}
+
+
+	public void setClassification(Classification classification) {
+		this.classification = classification;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Record [id=" + id + ", countIn=" + countIn + ", countOut=" + countOut + ", timestamp=" + timestamp
+				+ ", channel=" + channel + ", classification=" + classification + "]";
+	}
+	
+	
 	
 
 }
