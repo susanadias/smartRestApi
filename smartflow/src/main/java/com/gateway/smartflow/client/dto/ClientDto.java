@@ -7,11 +7,7 @@ public class ClientDto {
 
     private String name;
 
-    public ClientDto(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
+  
     public ClientDto() {
     }
 
