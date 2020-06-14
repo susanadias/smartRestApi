@@ -77,16 +77,16 @@ public class UserController {
 	
 	
 	@PostMapping
-    public ResponseEntity<UserDto> create(@RequestBody UserDto userDto) {
+	public ResponseEntity<User> create(@RequestBody UserDto userDto) {
 		logger.info("Create a new user");
-		this.userService.saveUser(userDto);
-        return ResponseEntity.status(HttpStatus.CREATED).body(userDto);
-    }
+		User user = this.userService.saveUser(userDto);
+		return ResponseEntity.status(HttpStatus.CREATED).body(user);
+	}
 	
 	
 	@PutMapping("/{userId}")
     public ResponseEntity<UserDto> update(@PathVariable("userId") String userId, @RequestBody UserDto userDto) {
-		logger.info("Edit currently user");
+		logger.info("Edit user");
 		this.userService.editUser(Long.valueOf(userId), userDto);
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(userDto);
     }

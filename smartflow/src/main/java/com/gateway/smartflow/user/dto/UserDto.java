@@ -6,7 +6,7 @@ import com.gateway.smartflow.client.Client;
 import com.gateway.smartflow.client.dto.ClientDto;
 import com.gateway.smartflow.role.Role;
 import com.gateway.smartflow.store.Store;
-import com.gateway.smartflow.store.StoreDto;
+import com.gateway.smartflow.store.dto.StoreDto;
 import com.gateway.smartflow.utils.RequestDto;
 
 public class UserDto {

@@ -1,4 +1,4 @@
-package com.gateway.smartflow.store;
+package com.gateway.smartflow.store.dto;
 
 import java.util.Set;
 import com.gateway.smartflow.client.dto.ClientDto;

@@ -70,10 +70,7 @@ public class UserServiceImpl implements UserService{
 	public User editUser(Long userId, UserDto userDto) {
 		User user= this.userMapper.userDtoToUser(userDto);
 		user.setId(userId);
-		this.userRepository.save(user);
-		System.out.println("teste");
-		
-		return null;
+		return this.userRepository.save(user);
 	}
 	
 	
