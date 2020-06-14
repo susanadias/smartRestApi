@@ -85,6 +85,15 @@
 			<version>2.8.0</version>
 		</dependency>
 
+       <!-- Query DSL  -->
+		<dependency>
+			<groupId>com.querydsl</groupId>
+			<artifactId>querydsl-jpa</artifactId>
+			<version>${querydsl.version}</version>
+		</dependency>
+
+		<!-- MapStruct -->
+
 		<dependency>
 			<groupId>org.mapstruct</groupId>
 			<artifactId>mapstruct-jdk8</artifactId>
