@@ -38,7 +38,7 @@ public class StoreController {
 	@PostMapping
     public ResponseEntity<Store> create(@RequestBody StoreDto storeDto) {
 		logger.info("Create a new store");
-		Store store=this.storeService.saveStore(storeDto);
+		Store store=this.storeService.createStore(storeDto);
         return ResponseEntity.status(HttpStatus.CREATED).body(store);
     }
 	

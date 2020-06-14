@@ -12,7 +12,7 @@ public interface UserService {
 	
 	Page<UserDto> findUsersByClientIdTest(String clientId, Pageable pageable);
 	
-	User saveUser(UserDto userDto);
+	User createUser(UserDto userDto);
 	
 	User editUser(Long userId, UserDto userDto);
 	

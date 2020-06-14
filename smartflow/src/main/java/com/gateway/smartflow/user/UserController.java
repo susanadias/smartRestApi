@@ -79,7 +79,7 @@ public class UserController {
 	@PostMapping
 	public ResponseEntity<User> create(@RequestBody UserDto userDto) {
 		logger.info("Create a new user");
-		User user = this.userService.saveUser(userDto);
+		User user = this.userService.createUser(userDto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(user);
 	}
 	

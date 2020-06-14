@@ -12,7 +12,7 @@ public interface StoreService {
 	
 	StoreDto findStoreById(Long storeId);
 	
-	Store saveStore(StoreDto storeDto);
+	Store createStore(StoreDto storeDto);
 	
 	Store editStore(Long storeId, StoreDto storeDto);
 	
