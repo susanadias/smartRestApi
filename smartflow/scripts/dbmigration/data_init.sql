@@ -1,7 +1,7 @@
 
 /* INSERT ROLES TABLE */
-INSERT INTO role (name) VALUES('ADMINISTRADOR');
-INSERT INTO role (name) VALUES('PADRÃO');
+INSERT INTO role (name,label) VALUES('ADMINISTRADOR','Administrador');
+INSERT INTO role (name,label) VALUES('PADRÃO','Padrão');
 
 /* INSERT PLAN TABLE*/
 INSERT INTO plan (name) VALUES('GOLD');
