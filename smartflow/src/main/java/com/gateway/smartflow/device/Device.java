@@ -5,6 +5,7 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.gateway.smartflow.client.Client;
 import com.gateway.smartflow.store.Store;
 
@@ -40,10 +41,11 @@ public class Device implements Serializable {
 	private boolean disabled;
 	
 	@Column(name = "task_id")
-	private int taskId;
+	private Integer taskId;
+	
 	
 	@Column(name = "entry_device")
-	private boolean entryDevice;
+	private Boolean entryDevice;
 	
 	@Column(name = "interval_time_notification")
 	private String intervalTimeNotification;
@@ -112,19 +114,19 @@ public class Device implements Serializable {
 		this.disabled = disabled;
 	}
 
-	public int getTaskId() {
+	public Integer getTaskId() {
 		return taskId;
 	}
 
-	public void setTaskId(int taskId) {
+	public void setTaskId(Integer taskId) {
 		this.taskId = taskId;
 	}
 
-	public boolean isEntryDevice() {
+	public Boolean isEntryDevice() {
 		return entryDevice;
 	}
 
-	public void setEntryDevice(boolean entryDevice) {
+	public void setEntryDevice(Boolean entryDevice) {
 		this.entryDevice = entryDevice;
 	}
 
