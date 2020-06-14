@@ -36,7 +36,7 @@ public class StoreServiceImpl implements StoreService {
 	public StoreDto findStoreById(Long storeId) {
 
 		return this.storeMapper.storeToStoreDto(
-				this.storeRepository.findById(storeId).orElseThrow(() -> new RuntimeException(" Store Unavailable")));
+				this.storeRepository.findById(storeId).orElseThrow(() -> new ResourceNotFoundException(" Store Unavailable")));
 
 	}
 
