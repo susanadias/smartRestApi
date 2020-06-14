@@ -1,8 +1,13 @@
 package com.gateway.smartflow.user.dto;
 
+import java.util.Set;
+
 import com.gateway.smartflow.client.Client;
+import com.gateway.smartflow.client.dto.ClientDto;
 import com.gateway.smartflow.role.Role;
-import com.gateway.smartflow.utils.requestDto;
+import com.gateway.smartflow.store.Store;
+import com.gateway.smartflow.store.StoreDto;
+import com.gateway.smartflow.utils.RequestDto;
 
 public class UserDto {
     private Long id;
@@ -15,9 +20,11 @@ public class UserDto {
 
     private boolean disabled;
 
-    private requestDto role;
+    private RequestDto role;
     
-    private requestDto client;
+    private ClientDto client;
+    
+    private Set<StoreDto> stores;
 
     public Long getId() {
 		return id;
@@ -59,24 +66,30 @@ public class UserDto {
 		this.disabled = disabled;
 	}
 
-	public requestDto getRole() {
+	public RequestDto getRole() {
         return role;
     }
 
-    public void setRole(Role role) {
-        this.role = new requestDto(role.getId(), role.getName());
+    public void setRole(RequestDto role) {
+       this.role = role;
     }
     
-    public requestDto getClient() {
+    public ClientDto getClient() {
         return client;
     }
 
-    public void setClient (Client client) {
-        this.client = new requestDto(client.getId(), client.getName());
+    public void setClient (ClientDto client) {
+      this.client = client;
     }
-    
 
-    
+	public Set<StoreDto> getStores() {
+		return stores;
+	}
 
+	public void setStores(Set<StoreDto> store) {
+		this.stores=store;
+	}
+    
+  
     
 }

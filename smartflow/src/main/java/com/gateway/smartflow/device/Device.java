@@ -55,6 +55,104 @@ public class Device implements Serializable {
 	public Device() {
 		
 	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public boolean isPanel() {
+		return isPanel;
+	}
+
+	public void setPanel(boolean isPanel) {
+		this.isPanel = isPanel;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getDeviceIp() {
+		return deviceIp;
+	}
+
+	public void setDeviceIp(String deviceIp) {
+		this.deviceIp = deviceIp;
+	}
+
+	public String getMacAddress() {
+		return macAddress;
+	}
+
+	public void setMacAddress(String macAddress) {
+		this.macAddress = macAddress;
+	}
+
+	public boolean isDisabled() {
+		return disabled;
+	}
+
+	public void setDisabled(boolean disabled) {
+		this.disabled = disabled;
+	}
+
+	public int getTaskId() {
+		return taskId;
+	}
+
+	public void setTaskId(int taskId) {
+		this.taskId = taskId;
+	}
+
+	public boolean isEntryDevice() {
+		return entryDevice;
+	}
+
+	public void setEntryDevice(boolean entryDevice) {
+		this.entryDevice = entryDevice;
+	}
+
+	public String getIntervalTimeNotification() {
+		return intervalTimeNotification;
+	}
+
+	public void setIntervalTimeNotification(String intervalTimeNotification) {
+		this.intervalTimeNotification = intervalTimeNotification;
+	}
+
+	public Store getStore() {
+		return store;
+	}
+
+	public void setStore(Store store) {
+		this.store = store;
+	}
+
+	@Override
+	public String toString() {
+		return "Device [id=" + id + ", name=" + name + ", isPanel=" + isPanel + ", description=" + description
+				+ ", deviceIp=" + deviceIp + ", macAddress=" + macAddress + ", disabled=" + disabled + ", taskId="
+				+ taskId + ", entryDevice=" + entryDevice + ", intervalTimeNotification=" + intervalTimeNotification
+				+ ", store=" + store + "]";
+	}
+	
+	
 	
 	
 

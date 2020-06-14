@@ -54,10 +54,9 @@ public class User implements Serializable{
 	
 	
 	public User() {
-		 stores = new HashSet<>();
 	}
 
-	public User(String email,String userPassword, String name, boolean disabled, Role role, Client client) {
+	public User(String email,String userPassword, String name, boolean disabled, Role role, Client client,Set<Store> stores) {
 		super();
 		this.email = email;
 		this.userPassword =userPassword;
@@ -65,6 +64,7 @@ public class User implements Serializable{
 		this.disabled = disabled;
 		this.role = role;
 		this.client = client;
+		this.stores=stores;
 	}
 
 	public Long getId() {

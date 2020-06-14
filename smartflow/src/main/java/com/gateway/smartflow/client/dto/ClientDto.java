@@ -1,17 +1,18 @@
-package com.gateway.smartflow.utils;
+package com.gateway.smartflow.client.dto;
 
-public class requestDto {
+
+public class ClientDto {
 
     private Long id;
 
     private String name;
 
-    public requestDto(Long id, String name) {
+    public ClientDto(Long id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public requestDto() {
+    public ClientDto() {
     }
 
     public Long getId() {
