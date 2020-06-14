@@ -1,0 +1,480 @@
+{
+	"info": {
+		"_postman_id": "4168bfb5-ce2d-477b-b7c4-133a7f10a7a6",
+		"name": "smartflow-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "roles",
+			"item": [
+				{
+					"name": "Role - List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/roles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "User - Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getAllUsers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jun 2020 11:29:44 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[]"
+						}
+					]
+				},
+				{
+					"name": "User - List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users?clientId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "clientId",
+									"value": "2"
+								},
+								{
+									"key": "pageSize",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User - Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": null,\r\n    \"name\": \"lurdes branco\",\r\n    \"email\": \"lurdesdd@gmail.com\",\r\n    \"userPassword\": \"teste\",\r\n    \"disabled\": false,\r\n    \"role\": {\r\n        \"id\": 1,\r\n        \"name\": \"ADMINISTRADOR\"\r\n    },\r\n    \"client\": {\r\n        \"id\": 2,\r\n        \"name\": \"primark\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User - Edit",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"name\": \"maria manuela fomes\",\r\n    \"email\": \"dsdsdsds@gmail.com\",\r\n    \"userPassword\": \"testedddd\",\r\n    \"disabled\": false,\r\n    \"role\": {\r\n        \"id\": 1,\r\n        \"name\": \"ADMINISTRADOR\"\r\n    },\r\n    \"client\": {\r\n        \"id\": 2,\r\n        \"name\": \"primark\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "stores",
+			"item": [
+				{
+					"name": "Store - Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/stores/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"stores",
+								"1"
+							]
+						},
+						"description": "get store by id"
+					},
+					"response": []
+				},
+				{
+					"name": "Store - Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \" \",\r\n    \"name\": \"gato-preto\",\r\n    \"email\": \"gato-preto@gmail.com\",\r\n    \"address\": \"amadora\",\r\n    \"maxAllowed\": 50,\r\n    \"panelLanguage\": null,\r\n    \"logoPath\": null,\r\n    \"urlPath\": \"\",\r\n    \"client\": {\r\n        \"id\": 1,\r\n        \"name\": \"Susana Dias\"\r\n    },\r\n    \"users\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"susana\",\r\n            \"email\": \"susana@gmail.com\",\r\n            \"userPassword\": \"teste\",\r\n            \"disabled\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/stores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"stores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store - Edit",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": null,\r\n    \"name\": \"wortensddnasasasa\",\r\n    \"email\": \"wortensdsdsda-susassaasana@gmail.com\",\r\n    \"address\": \"almada-shshssss\",\r\n    \"maxAllowed\": 4,\r\n    \"panelLanguage\": null,\r\n    \"logoPath\": null,\r\n    \"urlPath\": \"\",\r\n    \"client\": {\r\n        \"id\": 1,\r\n        \"name\": \"Susana Dias\"\r\n    },\r\n    \"users\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"susana\",\r\n            \"email\": \"susana@gmail.com\",\r\n            \"userPassword\": \"teste\",\r\n            \"disabled\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/stores/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"stores",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store - Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/stores/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"stores",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store - List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "devices",
+			"item": [
+				{
+					"name": "Devices - List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/devices/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"devices",
+								"1"
+							]
+						},
+						"description": "Get devices from store Id "
+					},
+					"response": []
+				},
+				{
+					"name": "Devices - Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/devices/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"devices",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Devices - Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"id\": \"\",\r\n\t\"name\": \"camera1\",\r\n\t\"description\": \"camera da frente\",\r\n\t\"deviceIp\": \"192.168.1.20\",\r\n\t\"macAddress\": \"BE:DT:FT\",\r\n\t\"disabled\": true,\r\n\t\"taskId\": null,\r\n\t\"entryDevice\": null,\r\n\t\"intervalTimeNotification\": null,\r\n\t\"store\": {\r\n\t\t\"id\": 1\r\n\t},\r\n\t\"panel\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/devices",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"devices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Device - Edit",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"\",\r\n    \"name\": \"camera1sdsdsd\",\r\n    \"description\": \"camera da frente\",\r\n    \"deviceIp\": \"192.168.1.20\",\r\n    \"macAddress\": \"BE:DT:FT\",\r\n    \"disabled\": true,\r\n    \"taskId\": null,\r\n    \"entryDevice\": null,\r\n    \"intervalTimeNotification\": null,\r\n    \"store\": {\r\n        \"id\": 1\r\n    },\r\n    \"panel\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/devices/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"devices",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Device - Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/devices/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"devices",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "clients",
+			"item": [
+				{
+					"name": "clients-list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
