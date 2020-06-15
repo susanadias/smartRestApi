@@ -18,11 +18,9 @@ public class DeviceDto {
 	
 	private boolean disabled;
 	
-	private Integer taskId;
-	
 	private Boolean entryDevice;
 
-	private String intervalTimeNotification;
+	private String notificationIntervalTime;
 	
     private StoreDto store;
     
@@ -87,13 +85,6 @@ public class DeviceDto {
 		this.disabled = disabled;
 	}
 
-	public Integer getTaskId() {
-		return taskId;
-	}
-
-	public void setTaskId(Integer taskId) {
-		this.taskId = taskId;
-	}
 
 	public Boolean isEntryDevice() {
 		return entryDevice;
@@ -103,12 +94,18 @@ public class DeviceDto {
 		this.entryDevice = entryDevice;
 	}
 
-	public String getIntervalTimeNotification() {
-		return intervalTimeNotification;
+	
+
+	public String getNotificationIntervalTime() {
+		return notificationIntervalTime;
 	}
 
-	public void setIntervalTimeNotification(String intervalTimeNotification) {
-		this.intervalTimeNotification = intervalTimeNotification;
+	public void setNotificationIntervalTime(String notificationIntervalTime) {
+		this.notificationIntervalTime = notificationIntervalTime;
+	}
+
+	public Boolean getEntryDevice() {
+		return entryDevice;
 	}
 
 	public StoreDto getStore() {

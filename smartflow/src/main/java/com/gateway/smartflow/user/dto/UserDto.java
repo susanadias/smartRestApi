@@ -5,6 +5,7 @@ import java.util.Set;
 import com.gateway.smartflow.client.Client;
 import com.gateway.smartflow.client.dto.ClientDto;
 import com.gateway.smartflow.role.Role;
+import com.gateway.smartflow.role.RoleDto;
 import com.gateway.smartflow.store.Store;
 import com.gateway.smartflow.store.dto.StoreDto;
 import com.gateway.smartflow.utils.RequestDto;
@@ -16,15 +17,15 @@ public class UserDto {
 
     private String email;
 
-    private String userPassword;
+    private String password;
 
     private boolean disabled;
 
-    private RequestDto role;
+    private RoleDto role;
     
-    private ClientDto client;
+    private RequestDto client;
     
-    private Set<StoreDto> stores;
+    private Set<RequestDto> stores;
 
     public Long getId() {
 		return id;
@@ -50,12 +51,14 @@ public class UserDto {
 		this.email = email;
 	}
 
-	public String getUserPassword() {
-		return userPassword;
+	
+
+	public String getPassword() {
+		return password;
 	}
 
-	public void setUserPassword(String userPassword) {
-		this.userPassword = userPassword;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public boolean isDisabled() {
@@ -66,30 +69,33 @@ public class UserDto {
 		this.disabled = disabled;
 	}
 
-	public RequestDto getRole() {
-        return role;
-    }
-
-    public void setRole(RequestDto role) {
-       this.role = role;
-    }
+	
     
-    public ClientDto getClient() {
-        return client;
-    }
+    public RoleDto getRole() {
+		return role;
+	}
 
-    public void setClient (ClientDto client) {
-      this.client = client;
-    }
+	public void setRole(RoleDto role) {
+		this.role = role;
+	}
 
-	public Set<StoreDto> getStores() {
+	public RequestDto getClient() {
+		return client;
+	}
+
+	public void setClient(RequestDto client) {
+		this.client = client;
+	}
+
+	public Set<RequestDto> getStores() {
 		return stores;
 	}
 
-	public void setStores(Set<StoreDto> store) {
-		this.stores=store;
+	public void setStores(Set<RequestDto> stores) {
+		this.stores = stores;
 	}
-    
+
+	
   
     
 }

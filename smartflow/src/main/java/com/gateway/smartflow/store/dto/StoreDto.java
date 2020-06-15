@@ -20,7 +20,7 @@ public class StoreDto {
 	
 	private String logoPath;
 	
-	private String urlPath;
+	private String painelUrl;
 	
     private ClientDto client;
 	
@@ -87,12 +87,14 @@ public class StoreDto {
 		this.logoPath = logoPath;
 	}
 
-	public String getUrlPath() {
-		return urlPath;
+	
+
+	public String getPainelUrl() {
+		return painelUrl;
 	}
 
-	public void setUrlPath(String urlPath) {
-		this.urlPath = urlPath;
+	public void setPainelUrl(String painelUrl) {
+		this.painelUrl = painelUrl;
 	}
 
 	public ClientDto getClient() {

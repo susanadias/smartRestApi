@@ -34,17 +34,6 @@ public class Client implements Serializable{
 	@Column(name = "name")
 	private String name;
 	
-	@Column(name = "email",nullable = false, unique = true)
-	@Email(message = "Please provide a valid e-mail")
-	private String email;
-	
-
-	@Column(name = "client_password")
-	private String clientPassword;
-	
-	@Column(name = "reset_token")
-	private String resetToken;
-	
 	@Column(name = "disabled")
 	private boolean disabled;
 
@@ -82,27 +71,9 @@ public class Client implements Serializable{
 
     
 
-	public String getEmail() {
-		return email;
-	}
 
 
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-
-
-	public String getClientPassword() {
-		return clientPassword;
-	}
-
-
-
-	public void setClientPassword(String clientPassword) {
-		this.clientPassword = clientPassword;
-	}
+	
 
 
 
@@ -154,11 +125,12 @@ public class Client implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Client [id=" + id + ", name=" + name + ", email=" + email + ", clientPassword=" + clientPassword
-				+ ", disabled=" + disabled + ", showGatewayLogo=" + showGatewayLogo + ", users=" + users + ", plan="
-				+ plan + "]";
+		return "Client [id=" + id + ", name=" + name + ", disabled=" + disabled + ", showGatewayLogo=" + showGatewayLogo
+				+ ", users=" + users + ", plan=" + plan + "]";
 	}
 
+
+    
 	
 	
 	

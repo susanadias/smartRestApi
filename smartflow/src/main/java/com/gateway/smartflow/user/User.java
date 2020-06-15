@@ -33,11 +33,9 @@ public class User implements Serializable{
 	@Email(message = "Please provide a valid e-mail")
 	private String email;
 	
-	@Column(name = "user_password")
-	private String userPassword;
+	@Column(name = "password")
+	private String password;
 	
-	@Column(name = "reset_token")
-	private String resetToken;
 
 	@Column(name = "disabled")
 	private boolean disabled;
@@ -61,16 +59,21 @@ public class User implements Serializable{
 	public User() {
 	}
 
-	public User(String email,String userPassword, String name, boolean disabled, Role role, Client client,Set<Store> stores) {
+	
+	
+	public User(String name, @Email(message = "Please provide a valid e-mail") String email, String password,
+			boolean disabled, Role role, Client client, Set<Store> stores) {
 		super();
-		this.email = email;
-		this.userPassword =userPassword;
 		this.name = name;
+		this.email = email;
+		this.password = password;
 		this.disabled = disabled;
 		this.role = role;
 		this.client = client;
-		this.stores=stores;
+		this.stores = stores;
 	}
+
+
 
 	public Long getId() {
 		return id;
@@ -84,18 +87,24 @@ public class User implements Serializable{
 		return email;
 	}
 	
-
-	public String getUserPassword() {
-		return userPassword;
-	}
-
-	public void setUserPassword(String userPassword) {
-		this.userPassword = userPassword;
-	}
-
+	
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	
+
+	public String getPassword() {
+		return password;
+	}
+
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+
 
 	public String getName() {
 		return name;
@@ -138,10 +147,14 @@ public class User implements Serializable{
 		this.stores = stores;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", email=" + email + ", userPassword=" + userPassword
-				+ ", disabled=" + disabled + ", role=" + role + ", client=" + client + ", stores=" + stores + "]";
+		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", disabled="
+				+ disabled + ", role=" + role + ", client=" + client + ", stores=" + stores + "]";
 	}
+
+	
 
 }

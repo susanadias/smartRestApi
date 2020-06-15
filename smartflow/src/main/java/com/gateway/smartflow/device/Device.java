@@ -40,15 +40,11 @@ public class Device implements Serializable {
 	@Column(name = "disabled")
 	private boolean disabled;
 	
-	@Column(name = "task_id")
-	private Integer taskId;
-	
-	
 	@Column(name = "entry_device")
 	private Boolean entryDevice;
 	
-	@Column(name = "interval_time_notification")
-	private String intervalTimeNotification;
+	@Column(name = "notification_interval_time")
+	private String notificationIntervalTime;
 	
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "store_id", nullable = false)
@@ -114,13 +110,6 @@ public class Device implements Serializable {
 		this.disabled = disabled;
 	}
 
-	public Integer getTaskId() {
-		return taskId;
-	}
-
-	public void setTaskId(Integer taskId) {
-		this.taskId = taskId;
-	}
 
 	public Boolean isEntryDevice() {
 		return entryDevice;
@@ -130,12 +119,18 @@ public class Device implements Serializable {
 		this.entryDevice = entryDevice;
 	}
 
-	public String getIntervalTimeNotification() {
-		return intervalTimeNotification;
+	
+
+	public String getNotificationIntervalTime() {
+		return notificationIntervalTime;
 	}
 
-	public void setIntervalTimeNotification(String intervalTimeNotification) {
-		this.intervalTimeNotification = intervalTimeNotification;
+	public void setNotificationIntervalTime(String notificationIntervalTime) {
+		this.notificationIntervalTime = notificationIntervalTime;
+	}
+
+	public Boolean getEntryDevice() {
+		return entryDevice;
 	}
 
 	public Store getStore() {
@@ -149,13 +144,11 @@ public class Device implements Serializable {
 	@Override
 	public String toString() {
 		return "Device [id=" + id + ", name=" + name + ", isPanel=" + isPanel + ", description=" + description
-				+ ", deviceIp=" + deviceIp + ", macAddress=" + macAddress + ", disabled=" + disabled + ", taskId="
-				+ taskId + ", entryDevice=" + entryDevice + ", intervalTimeNotification=" + intervalTimeNotification
-				+ ", store=" + store + "]";
+				+ ", deviceIp=" + deviceIp + ", macAddress=" + macAddress + ", disabled=" + disabled + ", entryDevice="
+				+ entryDevice + ", notificationIntervalTime=" + notificationIntervalTime + ", store=" + store + "]";
 	}
-	
-	
-	
+
+
 	
 
 }

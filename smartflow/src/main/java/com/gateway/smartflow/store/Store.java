@@ -44,8 +44,8 @@ public class Store implements Serializable{
 	@Column(name = "logo_path")
 	private String logoPath;
 	
-	@Column(name = "url_path")
-	private String urlPath;
+	@Column(name = "panel_url")
+	private String panelUrl;
 	
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "client_id", nullable = false)
@@ -130,13 +130,15 @@ public class Store implements Serializable{
 	}
 
 
-	public String getUrlPath() {
-		return urlPath;
+	
+
+	public String getPanelUrl() {
+		return panelUrl;
 	}
 
 
-	public void setUrlPath(String urlPath) {
-		this.urlPath = urlPath;
+	public void setPanelUrl(String panelUrl) {
+		this.panelUrl = panelUrl;
 	}
 
 
@@ -163,9 +165,12 @@ public class Store implements Serializable{
 	@Override
 	public String toString() {
 		return "Store [id=" + id + ", name=" + name + ", email=" + email + ", address=" + address + ", maxAllowed="
-				+ maxAllowed + ", panelLanguage=" + panelLanguage + ", logoPath=" + logoPath + ", urlPath=" + urlPath
+				+ maxAllowed + ", panelLanguage=" + panelLanguage + ", logoPath=" + logoPath + ", panelUrl=" + panelUrl
 				+ ", client=" + client + ", users=" + users + "]";
 	}
+
+
+	
 	
 	
 	
