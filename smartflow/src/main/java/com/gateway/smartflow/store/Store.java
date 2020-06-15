@@ -8,6 +8,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 import com.gateway.smartflow.client.Client;
+import com.gateway.smartflow.device.Device;
 import com.gateway.smartflow.plan.Plan;
 import com.gateway.smartflow.user.User;
 
@@ -53,6 +54,9 @@ public class Store implements Serializable{
 	
 	@ManyToMany(mappedBy = "stores")
     private Set<User> users;
+	
+	@OneToMany(mappedBy="store")
+    private Set<Device> devices;
 
 	
 	public Store() {
@@ -159,6 +163,18 @@ public class Store implements Serializable{
 
 	public void setUsers(Set<User> users) {
 		this.users = users;
+	}
+	
+	
+
+
+	public Set<Device> getDevices() {
+		return devices;
+	}
+
+
+	public void setDevices(Set<Device> devices) {
+		this.devices = devices;
 	}
 
 

@@ -14,6 +14,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.gateway.smartflow.user.dto.UserMapper;
+import com.gateway.smartflow.user.dto.UserToStoreDto;
 import com.gateway.smartflow.exceptions.ResourceNotFoundException;
 import com.gateway.smartflow.user.dto.UserDto;
 
@@ -66,6 +67,12 @@ public class UserServiceImpl implements UserService{
 		User user= this.userMapper.userDtoToUser(userDto);
 		user.setId(userId);
 		return this.userRepository.save(user);
+	}
+
+	@Override
+	public UserToStoreDto findStoresByUserId(Long userId) {
+		return this.userMapper.userToDeviceDto(
+				this.userRepository.findById(userId).orElseThrow(() -> new ResourceNotFoundException(" User Unavailable")));
 	}
 	
 	

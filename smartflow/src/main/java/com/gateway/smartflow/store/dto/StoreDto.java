@@ -2,6 +2,7 @@ package com.gateway.smartflow.store.dto;
 
 import java.util.Set;
 import com.gateway.smartflow.client.dto.ClientDto;
+import com.gateway.smartflow.device.Device;
 import com.gateway.smartflow.user.User;
 
 public class StoreDto {
@@ -112,16 +113,6 @@ public class StoreDto {
 	public void setUsers(Set<User> users) {
 		this.users = users;
 	}
-    
-    
-	
-	
-
-
-	
-	
-	
-	
 
 	
 }

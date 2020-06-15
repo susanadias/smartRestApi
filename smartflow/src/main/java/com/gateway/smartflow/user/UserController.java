@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.gateway.smartflow.user.dto.UserDto;
+import com.gateway.smartflow.user.dto.UserToStoreDto;
 
 
 
@@ -88,5 +89,15 @@ public class UserController {
 		this.userService.editUser(Long.valueOf(userId), userDto);
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(userDto);
     }
+	
+	
+	@GetMapping("/{userId}/stores")
+	public ResponseEntity<UserToStoreDto> getStoresByUserId(@PathVariable("userId") String userId) {
+		logger.info("Get Stores by user Id");
+		UserToStoreDto userToDeviceDto=this.userService.findStoresByUserId(Long.valueOf(userId));
+		return new ResponseEntity<UserToStoreDto>(userToDeviceDto, new HttpHeaders(), HttpStatus.OK);
+	}
+	
+	
 
 }

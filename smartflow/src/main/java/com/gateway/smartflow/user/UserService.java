@@ -4,6 +4,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import com.gateway.smartflow.user.dto.UserDto;
+import com.gateway.smartflow.user.dto.UserToStoreDto;
 
 
 public interface UserService {
@@ -19,5 +20,7 @@ public interface UserService {
 	User editUser(Long userId, UserDto userDto);
 	
 	void deleteUser(Long userId);
+	
+	UserToStoreDto findStoresByUserId(Long userId);
                
 }

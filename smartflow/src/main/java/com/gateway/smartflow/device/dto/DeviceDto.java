@@ -22,7 +22,7 @@ public class DeviceDto {
 
 	private String notificationIntervalTime;
 	
-    private StoreDto store;
+   // private StoreDto store;
     
 
 	public DeviceDto() {
@@ -107,15 +107,17 @@ public class DeviceDto {
 	public Boolean getEntryDevice() {
 		return entryDevice;
 	}
-
-	public StoreDto getStore() {
-		return store;
-	}
-
-	public void setStore(StoreDto store) {
-		this.store = store;
-	}
+	
     
+
+	@Override
+	public String toString() {
+		return "DeviceDto [id=" + id + ", name=" + name + ", isPanel=" + isPanel + ", description=" + description
+				+ ", deviceIp=" + deviceIp + ", macAddress=" + macAddress + ", disabled=" + disabled + ", entryDevice="
+				+ entryDevice + ", notificationIntervalTime=" + notificationIntervalTime + "]";
+	}
+
+	
     
 	
 

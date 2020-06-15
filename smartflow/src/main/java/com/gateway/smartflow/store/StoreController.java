@@ -56,5 +56,11 @@ public class StoreController {
 		return new ResponseEntity<Void>(HttpStatus.OK);
     }
 	
+	
+	@GetMapping("/{storeId}/devices")
+	public ResponseEntity<StoreDto> getDevicesByStoreId(@PathVariable("storeId") String storeId) {
+		
+		return null;
+	}
 
 }
