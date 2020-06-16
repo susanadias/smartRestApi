@@ -85,12 +85,13 @@
 			<version>2.8.0</version>
 		</dependency>
 
-       <!-- Query DSL  -->
+		<!-- Query DSL -->
 		<dependency>
 			<groupId>com.querydsl</groupId>
-			<artifactId>querydsl-jpa</artifactId>
-			<version>${querydsl.version}</version>
+			<artifactId>querydsl-apt</artifactId>
+			<version>4.2.1</version>
 		</dependency>
+		
 
 		<!-- MapStruct -->
 
@@ -149,6 +150,8 @@
 					</annotationProcessorPaths>
 				</configuration>
 			</plugin>
+			
+			
 		</plugins>
 	</build>
 

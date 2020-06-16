@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.gateway.smartflow.device.dto.DeviceDto;
 import com.gateway.smartflow.store.dto.StoreDto;
 import com.gateway.smartflow.user.dto.UserDto;
 
@@ -57,10 +59,11 @@ public class StoreController {
     }
 	
 	
-	@GetMapping("/{storeId}/devices")
-	public ResponseEntity<StoreDto> getDevicesByStoreId(@PathVariable("storeId") String storeId) {
+	/*@GetMapping("/{storeId}/devices")
+	public ResponseEntity<DeviceDto> getDevicesByStoreId(@PathVariable("storeId") String storeId,  @RequestParam String isDisabled) {
 		
+		//Query DSL 
 		return null;
-	}
+	}*/
 
 }
