@@ -16,6 +16,8 @@ import org.springframework.web.multipart.MultipartFile;
 @Service
 public class FilesStorageServiceImpl implements FilesStorageService {
 
+	//Uma propriedade do spring boot
+	//public static final String uploadingDir = System.getProperty("user.dir") + "/uploadingDir/";
 	private final Path root = Paths.get("C:\\smartFlow\\smartflow\\uploads");
 
 	@Override

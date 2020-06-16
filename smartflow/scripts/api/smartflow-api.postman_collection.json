@@ -144,7 +144,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": null,\r\n    \"name\": \"lurdes branco\",\r\n    \"email\": \"lurdesdd@gmail.com\",\r\n    \"userPassword\": \"teste\",\r\n    \"disabled\": false,\r\n    \"role\": {\r\n        \"id\": 1,\r\n        \"name\": \"ADMINISTRADOR\"\r\n    },\r\n    \"client\": {\r\n        \"id\": 2,\r\n        \"name\": \"primark\"\r\n    }\r\n}",
+							"raw": "{\r\n    \"id\": null,\r\n    \"name\": \"lurdes branco\",\r\n    \"email\": \"lurdesduasasdd@gmail.com\",\r\n    \"password\": \"teste\",\r\n    \"disabled\": false,\r\n    \"role\": {\r\n        \"id\": 1,\r\n        \"name\": \"ADMINISTRADOR\"\r\n    },\r\n    \"client\": {\r\n        \"id\": 2,\r\n        \"name\": \"primark\"\r\n    },\r\n    \"stores\": [\r\n        {\r\n            \"id\": 1\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -193,6 +193,29 @@
 								"v1",
 								"users",
 								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User -Stores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/1/stores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"1",
+								"stores"
 							]
 						}
 					},
@@ -333,7 +356,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/devices/1",
+							"raw": "http://localhost:8080/api/v1/stores/1/devices",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -342,8 +365,9 @@
 							"path": [
 								"api",
 								"v1",
-								"devices",
-								"1"
+								"stores",
+								"1",
+								"devices"
 							]
 						},
 						"description": "Get devices from store Id "
@@ -468,6 +492,47 @@
 						"header": [],
 						"url": {
 							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Files",
+			"item": [
+				{
+					"name": "Files - Upload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Boss/Desktop/teste"
+								}
+							],
+							"options": {
+								"formdata": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/files/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"upload"
+							]
 						}
 					},
 					"response": []
